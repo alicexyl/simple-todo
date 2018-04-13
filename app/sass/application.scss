@@ -1,0 +1,114 @@
+@import '../../node_modules/reset-css/_reset';
+
+$page-background: #F8F8F8;
+
+$app-width: 624px;
+$page-font-size: 16px;
+
+$border-size: 2px;
+$border-radius: 4px;
+
+$item-border-color: #EFEFEF;
+$item-background-color: #FFF;
+$item-padding-horizontal: 12px;
+$item-padding-vertical: 8px;
+
+$item-completed-color: #B7B7B7;
+
+$button-color: #FFF;
+$button-background-color: #79ADDD;
+
+$toggle-border-radius: 3px;
+$toggle-size: 16px;
+$toggle-padding: 2px;
+
+@mixin item-border {
+	box-sizing: border-box;	
+	background: $item-background-color;
+	border: $border-size $item-border-color solid;
+	border-radius: $border-radius;
+	padding: $item-padding-vertical $item-padding-horizontal;
+}
+
+body {
+	background: $page-background;
+	font: {
+		size: $page-font-size;
+		family: sans-serif;
+	}
+}
+
+input, button {
+	font-size: $page-font-size;
+}
+
+#app {
+	width: $app-width;
+	margin: 0 auto;
+	padding: 40px 0;
+}
+
+.add {
+	position: relative;
+}
+
+.new-todo {
+	@include item-border;
+
+	width: 100%;
+}
+
+.add-button {
+	background: $button-background-color;
+	color: $button-color;
+	border: none;
+	border-radius: $border-radius;
+
+	position: absolute;
+	right: $item-padding-horizontal;
+	top: $item-padding-vertical;
+}
+
+.todo-list-item {
+	@include item-border;
+
+	font-weight: bold;
+	margin-top: 8px;
+	padding-left: $item-padding-horizontal * 2 + $toggle-size;
+	position: relative;
+
+	&.is-completed {
+		.todo-list-item-label {
+			color: $item-completed-color;
+			text-decoration: line-through;
+		}
+
+		.toggle-label {
+			border-color: $item-completed-color;
+			color: $item-completed-color;
+		}
+	}
+ 
+}
+
+.toggle {
+	display: none;
+
+	+ .toggle-label {
+		cursor: pointer;
+		font-size: 1em;
+		border: $border-size solid black;
+		border-radius: $toggle-border-radius;
+		padding: $toggle-size / 2;
+		position: absolute;
+		left: $item-padding-horizontal;
+		top: $item-padding-vertical - $border-size;
+	}
+
+	&:checked + .toggle-label:after {
+		content: '\2714';
+		position: absolute;
+		top: $toggle-padding;
+		left: $toggle-padding;
+	}
+}

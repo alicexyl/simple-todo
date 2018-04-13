@@ -15,7 +15,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "prebuild": "rm -rf ./public/",
-    "build": "webpack -p",
+    "sass:build": "node-sass app/sass -o app/styles",
+    "build": "npm run sass:build && webpack -p",
     "lint": "eslint app",
     "test": "echo test"
   },
@@ -33,6 +34,8 @@
     "css-loader": "^0.23.1",
     "eslint": "^2.11.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "node-sass": "^4.8.3",
+    "reset-css": "^3.0.0",
     "stylus": "^0.54.5",
     "style-loader": "^0.13.1",
     "underscore-template-loader": "^0.7.2",

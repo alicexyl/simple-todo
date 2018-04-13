@@ -1,4 +1,3 @@
-<div class="todo-item">
-	<input class="toggle" type="checkbox" <% if (completed) { %>checked<% } %>>
-	<label><%- text %></label>
-</div>
+<input id="toggle-<%- id %>" class="toggle" type="checkbox" <% if (completed) { %>checked<% } %>>
+<label class="toggle-label" for="toggle-<%- id %>"></label>
+<label class="todo-list-item-label"><%- text %></label>

@@ -21,7 +21,7 @@ export default Marionette.View.extend({
 	className: function () {
 		var state = this.model.isCompleted() ? 'is-completed' : '';
 
-		return [ 'todo-list__item', state ].join(' ');
+		return [ 'todo-list-item', state ].join(' ');
 	},
 
 	onToggleClicked: function () {
