@@ -6,9 +6,29 @@ export default Marionette.View.extend({
 
 	template: template,
 
+	ui: {
+		toggle: '.toggle'
+	},
+
+	events: {
+		'click @ui.toggle': 'onToggleClicked'
+	},
+
+	modelEvents: {
+		'change:completed': 'onCompletedChanged'
+	},
+
 	className: function () {
-		var state = this.model.get('completed') ? 'completed' : '';
+		var state = this.model.isCompleted() ? 'is-completed' : '';
 
 		return [ 'todo-list__item', state ].join(' ');
+	},
+
+	onToggleClicked: function () {
+		this.model.toggle();
+	},
+
+	onCompletedChanged: function () {
+		this.$el.toggleClass('is-completed', this.model.isCompleted());
 	}
 });

@@ -13,7 +13,9 @@ export default Marionette.View.extend({
 	},
 
 	onRender: function () {
-		this.showChildView('add', new AddView());
+		this.showChildView('add', new AddView({
+			collection: this.collection
+		}));
 		this.showChildView('list', new TodoListView({
 			collection: this.collection
 		}))

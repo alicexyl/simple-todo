@@ -11,6 +11,5 @@ export default Marionette.Application.extend({
 		});
 
 		controller.start();
-		// this.showView(new MainView());
 	}
 });

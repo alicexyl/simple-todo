@@ -10,7 +10,7 @@ export default Marionette.Object.extend({
 	},
 
 	/**
-	 * Start the app.
+	 * Fetch todo list from server then show main view.
 	 */
 	start: function () {
 		var that = this;
