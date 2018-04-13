@@ -1,12 +1,17 @@
 {
   "name": "simple-todo",
+  "version": "1.0.0",
   "description": "Simple Todo App",
-  "author": "Alice Liu",
-  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+ssh://git@github.com/alicexyl/simple-todo.git"
   },
+  "author": "Alice Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alicexyl/simple-todo/issues"
+  },
+  "homepage": "https://github.com/alicexyl/simple-todo#readme",
   "scripts": {
     "start": "webpack-dev-server",
     "prebuild": "rm -rf ./public/",
