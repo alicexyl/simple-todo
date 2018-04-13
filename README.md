@@ -6,7 +6,7 @@ All development assets are in `app/` directory:
 
 - `components/`: JS sources
 - `sass/` contains styling sources
-- `templates`: templates used by views
+- `templates/`: templates used by views
 
 `build` command generates `public/` directory.
 
